@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "professions",
+  "version": "${version}",
+  "name": "Professions",
+  "description": "Professions that earn you configurable rewards.",
+  "authors": [
+    "Thonk"
+  ],
+  "contact": {
+    "sources": "https://github.com/ExcessiveAmountsOfZombies/Professions",
+    "issues": "https://github.com/ExcessiveAmountsOfZombies/Professions/issues",
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/professions-fabric",
+    "irc": "https://discord.gg/GZjtAn3F6W"
+  },
+  "license": "LGPL-3.0",
+  "icon": "assets/professions/icon.png",
+  "environment": "*",
+  "accessWidener": "professions.accesswidener",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.epherical.professions.datagen.ProfessionDataGenerator"
+    ],
+    "client": [
+      "com.epherical.professions.client.ProfessionsClient"
+    ],
+    "main": [
+      "com.epherical.professions.ProfessionsFabric"
+    ],
+    "cardinal-components": [
+      "com.epherical.professions.integration.cardinal.ChunkComponent",
+      "com.epherical.professions.integration.cardinal.BlockEntityComponent"
+    ]
+  },
+  "mixins": [
+    "Professions.mixins.json",
+    "professions-root.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "playerex": ">=3.3.7",
+    "fabric": ">=0.58.0",
+    "minecraft": ">=1.19",
+    "fabric-permissions-api-v0": ">=0.2-SNAPSHOT"
+  },
+  "custom": {
+    "waila:plugins": {
+      "id": "professions:prof_waila",
+      "initializer": "com.epherical.professions.integration.wthit.ProfWailaPlugin"
+    },
+    "cardinal-components": [
+      "professions:p_expo_chunk",
+      "professions:ownable_be"
+    ]
+  }
+}
